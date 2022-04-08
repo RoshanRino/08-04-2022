@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-class feat
+class feet
 {
     int foot;
     int inch;
@@ -23,9 +23,9 @@ class feat
             foot--;
         }
     }
-    feat operator+ (feat d)
+    feet operator+ (feet d)
     {
-        feat temp;
+        feet temp;
         temp.foot=d.foot+foot;
         temp.inch=d.inch+inch;
         if(temp.inch>11)
@@ -35,9 +35,9 @@ class feat
         }
         return temp;
     }
-    feat operator- (feat d)
+    feet operator- (feet d)
     {
-        feat temp;
+        feet temp;
         if(d.foot>foot)
         {
             temp.foot=d.foot-foot;
@@ -70,17 +70,17 @@ class feat
         }
         return temp;
     }
-    friend istream &operator>> (istream &input,feat &d)
+    friend istream &operator>> (istream &input,feet &d)
     {
         input>>d.foot>>d.inch;
         return input;
     }
-    friend ostream &operator<< (ostream &output,feat &d)
+    friend ostream &operator<< (ostream &output,feet &d)
     {
         output<<d.foot<<" "<<d.inch<<"\"";
         return output;
     }
-    void operator= (feat d)
+    void operator= (feet d)
     {
         foot=d.foot;
         inch=d.inch;
@@ -88,7 +88,7 @@ class feat
 };
 int main()
 {
-    feat g,h,sum,diff1,diff2;
+    feet g,h,sum,diff1,diff2;
     cin>>g>>h;
     sum=g+h;
     diff1=g-h;
